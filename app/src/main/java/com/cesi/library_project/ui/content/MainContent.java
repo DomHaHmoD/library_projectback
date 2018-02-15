@@ -48,10 +48,10 @@ public class MainContent implements IComponentProvider, ICategoryClicked {
             mCategoryContent.dispose();
         }
 
-        mCategoryContent = new CategoryListContent();
+        mCategoryContent = new CategoryListContent(category);
         mCategoryContent.implement(mContent);
         mCategoryContent.resize();
-
         System.out.println("test " + category.getName());
+
     }
 }

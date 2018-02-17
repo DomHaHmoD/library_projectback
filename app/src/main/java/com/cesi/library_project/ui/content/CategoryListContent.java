@@ -26,6 +26,7 @@ public class CategoryListContent implements IComponentProvider {
     private Label label;
     private Image imageofcategory;
     private String titles;
+    private Class TableClass;
 
 
     public CategoryListContent(Category category) {
@@ -65,21 +66,6 @@ public class CategoryListContent implements IComponentProvider {
         /*Image imageofcategory = DisplayController.getInstance()
                 .loadImage("/com/cesi/resources/book.png", 150);*/
 
-
-
-        /*if (name.equals("Livre")) {
-            Image imageofcategory = DisplayController.getInstance()
-                    .loadImage("/com/cesi/resources/book.png", 150);
-            } else if (name.equals("Film")) {
-                    Image imageofcategory = DisplayController.getInstance()
-                            .loadImage("/com/cesi/resources/heroes.png", 150);
-                    } else if (name.equals("Musique")) {
-                            Image imageofcategory = DisplayController.getInstance()
-                                    .loadImage("/com/cesi/resources/screen.png", 150);
-                            } else if (name.equals("Video")) {
-                                    Image imageofcategory = DisplayController.getInstance()
-                                            .loadImage("/com/cesi/resources/fusee.png", 150);
-                                    }*/
         // switch to select the category (image)
         switch (name) {
             case "Livre":
@@ -105,11 +91,15 @@ public class CategoryListContent implements IComponentProvider {
                 ;
                 break;
         }
-
+            // test to learn table
         if (name.equals ("tableau")) {
             Label label = new Label (mChildComposite, SWT.NONE);
-            Table tabletest = new Table (mChildComposite, SWT.NONE);
+
+            // add table current hardcode
+            Table tabletest = new Table (mChildComposite, SWT.CENTER);
             tabletest.setHeaderVisible(true);
+
+
             String[] titles = { "Col 1", "Col 2", "Col 3", "Col 4" };
 
             for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
@@ -131,6 +121,8 @@ public class CategoryListContent implements IComponentProvider {
             }
 
             tabletest.setBounds(25, 25, 220, 200);
+
+            // end of Table hardcode
 
             /*tabletest.addListener(SWT.Selection, new Listener() {
                 public void handleEvent(Event event) {

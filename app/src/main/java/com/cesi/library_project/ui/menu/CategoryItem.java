@@ -2,6 +2,7 @@ package com.cesi.library_project.ui.menu;
 
 import com.cesi.library_project.database.models.Category;
 import com.cesi.library_project.ui.IComponentProvider;
+import com.cesi.library_project.ui.navbar.NavBar;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;

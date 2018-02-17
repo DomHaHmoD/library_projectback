@@ -1,22 +1,19 @@
 package com.cesi.library_project.ui.content;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
 
-public class TableClass {
+
+public class TableClass  {
+    private Object TableClass;
 
     static {
         Display display = new Display();
         Shell shell = new Shell(display);
+        Label label = new Label (shell, SWT.NONE); // add to include
         shell.setSize(280, 300);
-        shell.setText("Table Example");
+        shell.setText("Table pour la bibliothèque");
 
         final Text text = new Text(shell, SWT.BORDER);
         text.setBounds(25, 240, 220, 25);
@@ -63,4 +60,10 @@ public class TableClass {
         }
         display.dispose();
     }
+
+
+    public Object getTabList() {
+        return TableClass;
+    }
+
 }

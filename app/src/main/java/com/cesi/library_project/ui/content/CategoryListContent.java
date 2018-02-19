@@ -10,6 +10,7 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 import org.jetbrains.annotations.NotNull;
@@ -67,9 +68,6 @@ public class CategoryListContent implements IComponentProvider {
                 .loadImage("/com/cesi/resources/book.png", 150);*/
 
         // switch to select the category (image)
-
-
-
         switch (name) {
             case "Livre":
                 imageofcategory = DisplayController.getInstance ()
@@ -149,9 +147,25 @@ public class CategoryListContent implements IComponentProvider {
         } else {
             int i = 0;
             while (i < 100) {
-                Label label = new Label (mChildComposite, SWT.NONE);
-                label.setImage (imageofcategory);
+                // create a container
+                Composite totocomposite = new Composite(mChildComposite, SWT.NONE);
+                RowLayout layoutvignette = new RowLayout (SWT.VERTICAL);
+                //layoutvignette.wrap = true;
+                totocomposite.setLayout (layoutvignette);
+
+                // create image
+                Label labelimage = new Label (totocomposite, SWT.NONE);
+                labelimage.setImage (imageofcategory);
+
+                Label labeltext = new Label (totocomposite, SWT.NONE);
+                labeltext.setText("image " + name);
+
+                // put label in container
+                //labelimage.setLayoutData (totocomposite);
+                //labeltext.setLayoutData (totocomposite);
+                
                 i++;
+
             }
 
         }

@@ -59,10 +59,10 @@ public class TableClass  {
 
         /*shell.open();
         while (!shell.isDisposed()) {
-            if (!display.readAndDispatch())
-                display.sleep();
+            if (!shell.readAndDispatch())
+                shell.sleep();
         }
-        display.dispose();*/
+        shell.dispose();*/
     }
 
 

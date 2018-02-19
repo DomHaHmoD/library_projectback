@@ -67,6 +67,9 @@ public class CategoryListContent implements IComponentProvider {
                 .loadImage("/com/cesi/resources/book.png", 150);*/
 
         // switch to select the category (image)
+
+
+
         switch (name) {
             case "Livre":
                 imageofcategory = DisplayController.getInstance ()
@@ -95,12 +98,18 @@ public class CategoryListContent implements IComponentProvider {
         if (name.equals ("tableau")) {
             Label label = new Label (mChildComposite, SWT.NONE);
 
+            final Text text = new Text(mChildComposite, SWT.BORDER);
+            text.setBounds(25, 240, 220, 25);
+
             // add table current hardcode
             Table tabletest = new Table (mChildComposite, SWT.CENTER);
             tabletest.setHeaderVisible(true);
 
 
-            String[] titles = { "Col 1", "Col 2", "Col 3", "Col 4" };
+            com.cesi.library_project.ui.content.TableClass object = new TableClass (mChildComposite);
+
+
+            /*String[] titles = { "Titre", "Auteur", "Notation", "Origine" };
 
             for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
                 TableColumn column = new TableColumn(tabletest, SWT.NULL);
@@ -111,7 +120,7 @@ public class CategoryListContent implements IComponentProvider {
                 TableItem item = new TableItem(tabletest, SWT.NULL);
                 item.setText("Item " + loopIndex);
                 item.setText(0, "Item " + loopIndex);
-                item.setText(1, "Yes");
+                item.setText(1, "Yes" + loopIndex);
                 item.setText(2, "No");
                 item.setText(3, "A table item");
             }
@@ -124,7 +133,8 @@ public class CategoryListContent implements IComponentProvider {
 
             // end of Table hardcode
 
-            /*tabletest.addListener(SWT.Selection, new Listener() {
+            tabletest.addListener(SWT.Selection, new Listener() {
+
                 public void handleEvent(Event event) {
                     if (event.detail == SWT.CHECK) {
                         text.setText("You checked " + event.item);

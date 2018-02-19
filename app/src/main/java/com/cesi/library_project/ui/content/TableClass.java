@@ -6,22 +6,26 @@ import org.eclipse.swt.widgets.Table;
 
 
 public class TableClass  {
+    private final Composite mChildComposite;
     private Object TableClass;
 
-    static {
-        Display display = new Display();
+    public TableClass (Composite composite) {
+        /*Display display = new Display();
         Shell shell = new Shell(display);
         Label label = new Label (shell, SWT.NONE); // add to include
-        shell.setSize(280, 300);
-        shell.setText("Table pour la bibliothèque");
+        shell.setSize(280, 300);*/
 
-        final Text text = new Text(shell, SWT.BORDER);
+         mChildComposite = composite;
+
+        //mChildComposite.setText("Table pour la bibliothèque");
+
+        final Text text = new Text(mChildComposite, SWT.BORDER);
         text.setBounds(25, 240, 220, 25);
 
-        Table table = new Table(shell, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL
+        Table table = new Table(mChildComposite, SWT.CHECK | SWT.BORDER | SWT.V_SCROLL
                 | SWT.H_SCROLL);
         table.setHeaderVisible(true);
-        String[] titles = { "Col 1", "Col 2", "Col 3", "Col 4" };
+        String[] titles = { "Titre", "Auteur", "Notation", "Origine" };
 
         for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
             TableColumn column = new TableColumn(table, SWT.NULL);
@@ -53,12 +57,12 @@ public class TableClass  {
             }
         });
 
-        shell.open();
+        /*shell.open();
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch())
                 display.sleep();
         }
-        display.dispose();
+        display.dispose();*/
     }
 
 
